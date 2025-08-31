@@ -31,3 +31,21 @@ Replies with a "failure" emote if the time is missed by a minute.
 
 2. Run the JS file!  
 	 You can use [pm2](https://pm2.keymetrics.io/) or [Docker](https://docs.docker.com/get-started/get-docker/) to keep it running constantly.
+
+3. **Run with Docker**
+
+	 If you prefer to use Docker, follow these steps:
+
+	 - Build the Docker image:
+
+		 ```sh
+		 docker build -t discord-bot-replier .
+		 ```
+
+	 - Run the Docker container:
+
+		 ```sh
+		 docker run --env-file .env discord-bot-replier
+		 ```
+
+	 Make sure your `.env` file is present in the project directory before building and running the container.
