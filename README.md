@@ -42,10 +42,11 @@ Replies with a "failure" emote if the time is missed by a minute.
 		 docker build -t discord-bot-replier .
 		 ```
 
-	 - Run the Docker container:
 
-		 ```sh
-		 docker run --env-file .env discord-bot-replier
-		 ```
+		 - Run the Docker container in detached mode:
+
+			 ```sh
+			 docker run -d --env-file .env discord-bot-replier
+			 ```
 
 	 Make sure your `.env` file is present in the project directory before building and running the container.
