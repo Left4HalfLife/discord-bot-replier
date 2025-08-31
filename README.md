@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # discord-bot-replier
 
 Detects a specific emote sent at a specific time.  
@@ -19,7 +13,6 @@ Replies with a "failure" emote if the time is missed by a minute.
 ![Failure Example](images/fail.png)
 
 ## Setup Guide
-
 
 1. Create a `.env` file in the same directory as `bot.js` with the following content:
 
