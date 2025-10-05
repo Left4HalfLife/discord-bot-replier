@@ -83,9 +83,15 @@ client.on('messageCreate', (message) => {
     }
 
     if (message.mentions.has(client.user)) {
-
-        const cleaned = message.content.replace(`<@${client.user.id}>`, '').trim();
-        const replyText = cleaned.length > 0 ? cleaned : '^';
+        // Debugging info reply
+        const triggerTimeAM = `${TRIGGER_HOUR}:${TRIGGER_MINUTE} AM`;
+        const triggerTimePM = `${TRIGGER_HOUR}:${TRIGGER_MINUTE} PM`;
+        const failTimeAM = `${TRIGGER_HOUR}:${TRIGGER_MINUTE + 1}-${TRIGGER_MINUTE + 2} AM`;
+        const failTimePM = `${TRIGGER_HOUR}:${TRIGGER_MINUTE + 1}-${TRIGGER_MINUTE + 2} PM`;
+        const replyText = `Current time is ${now.toFormat('yyyy-MM-dd HH:mm:ss ZZZZ')} (${BOT_TIMEZONE}).\n` +
+            `${RESPONSE_EMOJI} will be sent at ${triggerTimeAM} and ${triggerTimePM}.\n` +
+            `${FAILURE_EMOJI} will be sent at ${failTimeAM} and ${failTimePM}.\n` +
+            `Trigger emoji: ${TRIGGER_EMOJI}`;
         message.reply(replyText);
     }
 

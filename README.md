@@ -50,7 +50,7 @@ Replies with a "failure" emote if the time is missed by a minute.
 	 - Run the Docker container in detached mode:
 
 		 ```sh
-		 docker run -d --env-file .env discord-bot-replier
+		 docker run -d --env-file .env --name discord-bot discord-bot-replier
 		 ```
 
 	 Make sure your `.env` file is present in the project directory before building and running the container.
